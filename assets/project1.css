@@ -1,0 +1,34 @@
+@import url("./global.css");
+@import url("./nav.css");
+@import url("./piha.css");
+
+.frame {
+	display: grid;
+	grid-template-areas:
+		"work1 work1"
+		"work3 work2";
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto;
+	gap: 1rem;
+	padding: 0 1rem;
+}
+.frame > section {
+	border: 1rem gainsboro solid;
+	box-sizing: border-box;
+	background-color: lightgrey;
+	overflow: hidden;
+}
+
+.work1 {
+	grid-area: work1;
+	height: 15rem;
+}
+.work2 {
+	grid-area: work2;
+	height: 40rem;
+}
+.work3 {
+	grid-area: work3;
+	height: 40rem;
+}
+

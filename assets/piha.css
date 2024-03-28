@@ -1,0 +1,276 @@
+.piha {
+	width: 46rem;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.piha .scene1 {
+	position: absolute;
+	width: 46rem;
+	height: 100%;
+	overflow: hidden;
+	perspective: 20rem;
+}
+
+@keyframes piha-scene1-bg {
+	0% {
+		left: 50rem;
+		opacity: 0;
+		transform: scale(1);
+	}
+	60% {
+		left: 0;
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes piha-scene1-title {
+	0% {
+		letter-spacing: -2rem;
+		opacity: 0;
+	}
+	60% {
+		letter-spacing: 5px;
+	}
+	100% {
+		letter-spacing: 0;
+		opacity: 1;
+	}
+}
+@keyframes piha-scene1-key1 {
+	0% {
+		left: 18rem;
+		opacity: 1;
+		transform: rotateY(30deg);
+	}
+	70% {
+		opacity: 0;
+		transform: rotateY(-90deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotateY(0deg);
+	}
+}
+@keyframes piha-scene1-key2 {
+	0% {
+		left: 26rem;
+		opacity: 1;
+		transform: rotateY(30deg);
+	}
+	70% {
+		left: 20rem;
+		opacity: 0;
+		transform: rotateY(-90deg);
+	}
+	100% {
+		left: 26rem;
+		opacity: 1;
+		transform: rotateY(0);
+	}
+}
+@keyframes piha-scene1-key3 {
+	0% {
+		left: 34rem;
+		opacity: 1;
+		transform: rotateY(30deg);
+	}
+	70% {
+		left: 28rem;
+		opacity: 0;
+		transform: rotateY(-90deg);
+	}
+	100% {
+		left: 34rem;
+		transform: rotateY(0);
+	}
+}
+
+.piha .scene1 .pic {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: auto;
+	transform: scale(1);
+	opacity: 1;
+	animation: piha-scene1-bg 2s;
+}
+.piha .scene1 .pic img {
+	width: 100%;
+	height: auto;
+}
+
+.piha .scene1 h2,
+.piha .scene1 h3 {
+	position: absolute;
+}
+
+.piha .scene1 h2 {
+	z-index: 2;
+	top: 2rem;
+	left: 2rem;
+	font-size: 3rem;
+	letter-spacing: 0rem;
+	color: white;
+	opacity: 1;
+	animation-duration: 2s;
+	animation-name: piha-scene1-title;
+}
+
+.piha .scene1 h3 {
+	z-index: 2;
+	top: 2rem;
+	padding: 1rem;
+	border-radius: 2rem;
+	letter-spacing: 3px;
+	color: white;
+}
+.piha .scene1 h3:nth-child(2) {
+	left: 18rem;
+	background-color: cadetblue;
+	
+	animation-duration: 1s;
+	animation-name: piha-scene1-key1;
+}
+.piha .scene1 h3:nth-child(3) {
+	left: 26rem;
+	background-color: chocolate;	
+	animation-duration: 1.5s;
+	animation-name: piha-scene1-key2;
+}
+
+.piha .scene1 h3:nth-child(4) {
+	left: 34rem;
+	background-color: cornflowerblue;
+	animation-duration: 2s;
+	animation-name: piha-scene1-key3;
+}
+
+@keyframes piha-scene2-pic {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes piha-scene2-title {
+	0% {
+		opacity: 0;
+		word-spacing: 2rem;
+	}
+	100% {
+		opacity: 1;
+		word-spacing: normal;
+	}
+}
+@keyframes piha-scene2-author {
+	0% {
+		top: -2rem;
+	}
+	100% {
+		top: 0;
+	}
+}
+@keyframes piha-scene2-target {
+	0% {
+		bottom: -10rem;
+	}
+	100% {
+		top: 8rem;
+	}
+}
+
+.piha .scene2 {
+	position: absolute;
+	z-index: 2;
+	width: 46rem;
+	height: 100%;
+	overflow: hidden;
+	background-color: lightblue;
+}
+.piha .scene2 .pic {
+	position: absolute;
+	z-index: -1;
+	top: -5rem;
+	animation-name: piha-scene2-pic;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+.piha .scene2 .author {
+	position: absolute;
+	top: -2rem;
+	padding-top: 3px;
+	padding-left: 3px;
+	color: white;
+	animation-name: piha-scene2-author;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 2s;
+}
+.piha .scene2 .title {
+	margin-top: 4rem;
+	text-align: center;
+	font-weight: bold;
+	font-size: 3rem;
+	background-image: url(./piha/Whatipu-Gibbons-homestead2.jpg);
+	background-position: center center;
+	background-clip: text;
+	color: transparent;
+	opacity: 0;
+	animation-delay: 1s;
+	animation-name: piha-scene2-title;
+	animation-duration: 2s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+.piha .scene2 .target {
+	position: absolute;
+	z-index: 3;
+	left: 17rem;
+	top: 20rem;
+	padding-top: 1rem;
+	text-align: center;
+	animation-name: piha-scene2-target;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 2s;
+}
+.piha .scene2 .target a {
+	padding: 5px 1rem;
+	opacity: 0.6;
+	background-color: darkcyan;
+	color: white;
+}
+
+
+
+
+.piha .operation {
+	position: absolute;
+	right: -10rem;
+	top: 4rem;
+	opacity: 0;
+	transition: all 0.6s;
+}
+.piha:hover .operation {
+	opacity: 1;
+}
+.piha .operation button {
+	width: 6rem;
+	height: 6rem;
+	border-radius: 3rem;
+	outline: 2px solid green;
+	cursor: pointer;
+}
+
+

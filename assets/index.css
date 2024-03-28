@@ -1,2 +1,14 @@
 @import url(./global.css);
+@import url(./nav.css);
 
+.section-title {
+	padding: 0 1rem;
+}
+
+.story-board-list {
+	list-style-position: outside;
+}
+.story-board-list > li {
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+}

@@ -1,8 +1,29 @@
 html {
 	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+body, h1, h2, h3, p {
 	padding: 0;
 	margin: 0;
+}
+
+h1 {
+	font-size: 2rem;
+}
+h2 {
+	font-size: 1.5rem;
+}
+
+ol {
+
+}
+
+a, a:visited {
+	color: black;
+	text-decoration: none;
+}
+a:hover{
+	color: darkslategray;
+	text-decoration: dashed;
 }
