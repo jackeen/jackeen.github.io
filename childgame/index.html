@@ -27,7 +27,7 @@
                     <input type="radio" id="fixed_min" name="chose_time" value="limited" >
                     Fixed Minutes
                 </label>
-                <input type="number" id="time_min" value="5" min="1" max="30" disabled>
+                <input type="number" id="time_min" min="1" step="1" disabled>
             </div>
 
             <form id="actions" method="dialog">
@@ -43,12 +43,14 @@
     <dialog id="game_over" class="game-over">
         <div class="failed">
             <h1>Game Over</h1>
+            <p>You got <span id="failed_score"></span> of <span id="total_score"></span></p>
             <div class="actions">
                 <button id="replay_failed">Replay</button>
             </div>
         </div>
         <div class="success">
             <h1>Challenge Success</h1>
+            <p>You got all scores.</p>
             <div class="actions">
                 <button id="replay_success">Replay</button>
             </div>

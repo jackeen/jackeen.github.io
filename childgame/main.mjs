@@ -23,6 +23,7 @@ let digger = new Digger(screen, () => {
 });
 
 // Time setting
+const DEFAULT_PLAY_MINUTES = 3;
 var limitedGame = false;
 var playMinutes = 0;
 function setTimeMode(mode) {
@@ -30,8 +31,8 @@ function setTimeMode(mode) {
     if (mode === "limited") {
         time.disabled = false;
         limitedGame = true;
-        playMinutes = 5;
-        time.value = 5;
+        playMinutes = DEFAULT_PLAY_MINUTES;
+        time.value = DEFAULT_PLAY_MINUTES;
     } else {
         limitedGame = false;
         time.disabled = true;
@@ -41,8 +42,8 @@ document.getElementById("time_min").addEventListener("change", (e) => {
     let time = e.target;
     let m = parseInt(time.value);
     if (isNaN(m)) {
-        time.value = 5;
-        playMinutes = 5;
+        time.value = DEFAULT_PLAY_MINUTES;
+        playMinutes = DEFAULT_PLAY_MINUTES;
     } else {
         playMinutes = m;
     }
@@ -69,7 +70,9 @@ document.addEventListener(GAME_PAUSED_EVENT, () => {
 document.addEventListener(GAME_RESUME_EVENT, () => {
     pauseCover.close();
 });
-document.addEventListener(GAME_FAILED_EVENT, () => {
+document.addEventListener(GAME_FAILED_EVENT, (e) => {
+    document.getElementById("failed_score").innerText = e.detail.score;
+    document.getElementById("total_score").innerText = e.detail.total;
     game_over.showModal();
     gameOver.classList.remove("success");
     gameOver.classList.add("failed");

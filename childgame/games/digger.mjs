@@ -457,14 +457,24 @@ class Digger {
     gameOverWithSuccess() {
         this.stopGame();
         soundEffect.successSound.play();
-        document.dispatchEvent(new Event(GAME_SUCCESS_EVENT));
+        document.dispatchEvent(new CustomEvent(GAME_SUCCESS_EVENT, {
+            detail: {
+                score: this.score,
+                total: GOLD_MINE_NUMBER,
+            }
+        }));
         console.log("Game over with success.")
     }
     gameOverWithFailed() {
         this.stopGame();
         soundEffect.failedSound.play();
-        document.dispatchEvent(new Event(GAME_FAILED_EVENT));
-        console.log("Game over with fail.")
+        document.dispatchEvent(new CustomEvent(GAME_FAILED_EVENT, {
+            detail: {
+                score: this.score,
+                total: GOLD_MINE_NUMBER,
+            }
+        }));
+        console.log("Game over with fail.");
     }
 
     // listening keyboard input
