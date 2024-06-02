@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <dialog id="introduce">
+        <h1>Digger Game</h1>
+        <div class="content">
+            <ul>
+                <li>The green actor is the item you can control.</li>
+                <li>Press W, S, A, D or Arrow keys to control its direction.</li>
+                <li>Press space key can attack the yellow when the green's nose touch it.</li>
+                <li>The reds will hurt green causing score down.</li>
+                <li>Press Enter key to pause the game.</li>
+            </ul>
+            <h2>Challenge Time</h2>
+            <div class="time">
+                <label for="infinite_min">
+                    <input type="radio" id="infinite_min" name="chose_time" checked value="not_limited" >
+                    Infinite
+                </label>
+                <label for="fixed_min">
+                    <input type="radio" id="fixed_min" name="chose_time" value="limited" >
+                    Fixed Minutes
+                </label>
+                <input type="number" id="time_min" value="5" min="1" max="30" disabled>
+            </div>
+
+            <form id="actions" method="dialog">
+                <button id="btn_start">Play</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="pause" class="pause">
+        <div class="icon"></div>
+    </dialog>
+
+    <dialog id="game_over" class="game-over">
+        <div class="failed">
+            <h1>Game Over</h1>
+            <div class="actions">
+                <button id="replay_failed">Replay</button>
+            </div>
+        </div>
+        <div class="success">
+            <h1>Challenge Success</h1>
+            <div class="actions">
+                <button id="replay_success">Replay</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="failed" class="game-failed">
+        <h1>The Challenge is Failed</h1>
+        <form id="actions" method="dialog">
+            <button id="btn_start">Replay</button>
+        </form>
+    </dialog>
+
+
+
+    <canvas id="canvas" tabindex="1">
+        Your Browser cannot support canvas.
+    </canvas>
+    <script type="module" src="main.mjs"></script>
+</body>
+</html>
