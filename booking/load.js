@@ -1,4 +1,4 @@
-
+// not used
 function bookDOM2JSON(xml) {
     const room = {};
     const root = xml.childNodes[0];

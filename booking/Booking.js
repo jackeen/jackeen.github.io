@@ -333,7 +333,8 @@ function bookDOM2JSON(xml) {
 }
 
 function loadData() {
-    fetch("./rooms.xml").then((res) => {
+    //debugger;
+    fetch("./allrooms.xml").then((res) => {
         return res.text();
     }).then((res) => {
         const parser = new DOMParser();
@@ -355,34 +356,35 @@ function loadData() {
     });
 }
 
-function getData(value,data) {
-    fetch("./rooms.xml").then((res) => {
-        return res.text();
-    }).then((res) => {
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(res, "text/xml");
-        return xml;
 
-    }).then((xml) => {
-        return bookDOM2JSON(xml);
+// function getData(value,data) {
+//     fetch("./allrooms.xml").then((res) => {
+//         return res.text();
+//     }).then((res) => {
+//         const parser = new DOMParser();
+//         const xml = parser.parseFromString(res, "text/xml");
+//         return xml;
 
-    }).then((json) => {
-        rooms = json;
-        function getDatas(value, data) {
+//     }).then((xml) => {
+//         return bookDOM2JSON(xml);
 
-            const roomData = rooms.Room[value][data];
+//     }).then((json) => {
+//         rooms = json;
+//         function getDatas(value, data) {
+
+//             const roomData = rooms.Room[value][data];
             
-            console.log(roomData);
-                return roomData;
+//             console.log(roomData);
+//                 return roomData;
         
-        }
-        return getDatas(value, data) ;
+//         }
+//         return getDatas(value, data) ;
 
-    }).catch(error => {
-        console.error("There is an error during loading data.");
-        console.error(error.toString());
-    });
-}
+//     }).catch(error => {
+//         console.error("There is an error during loading data.");
+//         console.error(error.toString());
+//     });
+// }
 
 // function loadData() {
 //     fetch("./rooms.xml").then((res) => {
