@@ -1,0 +1,105 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.description, .booking-form {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.map-container {
+    position: relative;
+    display: inline-block; /* Ensures the container fits the image size */
+}
+
+
+.map-container img {
+    display: block; /* Ensures there are no gaps below the image */
+    width: 100%; /* Optional: Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+.button{
+    position: absolute;
+    right: auto;
+    top: 100%;
+}
+.room {
+    position: absolute;
+    width: 100px; /* Match the dimensions used in the image map */
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+   
+}
+.booked {
+    background-color: green;
+
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+#image0{
+    display: none;
+}
+#image1{
+    display: none;
+}
+#image2{
+    display: none;
+}
+#image3{
+    display: none;
+}
+#image4{
+    display: none;
+}
+#image5{
+    display: none;
+}
+#image6{
+    display: none;
+}
+#image7{
+    display: none;
+}
+#image8{
+    display: none;
+}
+#image9{
+    display: none;
+}
+
+.not-booked {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.room:hover {
+    transform: scale(1.1);
+}
+
+.process {
+    width: 200px;
+}
