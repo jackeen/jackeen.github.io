@@ -20,7 +20,7 @@ function bookDOM2JSON(xml) {
 
 
 function loadData() {
-    fetch("./rooms.xml").then((res) => {
+    fetch("./allrooms.xml").then((res) => {
         return res.text();
     }).then((res) => {
         const parser = new DOMParser();
