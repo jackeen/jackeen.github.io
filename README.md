@@ -1,13 +1,10 @@
-# Website group project
+# The web game demonstrate
 
-> the last group project
+> This project is for assignment and fun
 
 The github alive page is here: [https://jackeen.github.io/](https://jackeen.github.io/)
 
-## Including two homeworks and its documents
 
-1. booking system 
-2. child game
 
 
 
